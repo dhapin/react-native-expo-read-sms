@@ -23,7 +23,11 @@ export async function startReadSMS(callback) {
           new NativeEventEmitter(RNExpoReadSms).addListener(
             "received_sms",
             (sms) => {
-              resultFun("success", sms);
+              const [originatingAddress, body] = sms.slice(1, -1).split(', ')
+              resultFun("success", {
+                originatingAddress,
+                body,
+              });
             }
           );
         },
