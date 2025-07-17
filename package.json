@@ -3,6 +3,7 @@
   "version": "9.0.2-alpha",
   "description": "Library to read incoming SMS in Android for Expo (React Native)",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
