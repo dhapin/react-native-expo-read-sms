@@ -17,7 +17,7 @@ export async function startReadSMS(callback) {
   };
   if (Platform.OS === "android") {
     const hasPermission = await checkIfHasSMSPermission();
-    if (hasPermission) {
+    if (hasPermission.hasReadSmsPermission && hasPermission.hasReceiveSmsPermission) {
       RNExpoReadSms.startReadSMS(
         (result) => {
           new NativeEventEmitter(RNExpoReadSms).addListener(
